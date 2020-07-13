@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Journal</title>
+    <link rel="stylesheet" href="./styles/main.css">
+</head>
+
+<body>
+    <!--Header with logo-->
+    <header class="header">
+        <img class="logo_img" src="./images/logo.png" alt="logo">
+        
+    </header>
+
+    <!--Main container-->
+    <article class="container">
+
+        <!--Left container with all form elements-->
+        <section class="content__left">
+                <form action="">
+                    <fieldset>
+                        <label for="date">Current Date</label>
+                        <input type="date" name="date" id="date">
+                        <label for="concepts">Concepts Covered</label>
+                        <input type="" name="date" id="date">
+                        <label for="concepts">Journal Entry</label>
+                        <textarea name="journal_entry_text" id="journal_entry_text" cols="50" rows="10"></textarea>
+                        <select name="mood" id="mood_list">
+                            <option value="happy">Happy</option>
+                            <option value="sad">Sad</option>
+                            <option value="anxious">Anxious</option>
+                            <option value="scared">Scared</option>
+                            <option value="other">Other</option>
+                        </select>
+                        <input class="add__button" type="submit" value="Add Journal Entry">
+                    </fieldset>
+                  
+                </form>
+        </section>
+
+
+    <!--Right container with display of logged entries-->
+        <section class="content__right">
+            <h1>Container right</h1>
+        </section>
+    </article>
+
+
+    <!--Footer with copyright info-->
+    <footer>
+        <p>Copyright stuff</p>
+    </footer>
+</body>
+</html>

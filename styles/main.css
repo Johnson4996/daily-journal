@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@400;700&display=swap');
+
+
+h1,h2,h3,p,label{
+     font-family: 'Baloo Da 2', sans-serif;
+}
+
+
+
+.header{
+    display: flex;
+}
+
+.logo_img{
+    height: 7rem;
+}
+
+
+
+
+
+.container{
+    display: flex;
+    justify-content: center;
+    border: 1px black solid;
+    border-radius: 10px;
+}
+
+
+
+.content__left{
+    
+    margin-left: -22rem;
+}
+
+fieldset{
+    display: flex;
+    border: none;
+    margin-bottom: 1rem;
+}
+
+.add__button, label, select{
+    margin-top: 1rem;
+}
+
