@@ -5,10 +5,14 @@ h1,h2,h3,p,label{
      font-family: 'Baloo Da 2', sans-serif;
 }
 
-
+html{
+    background-color: #846A4C;
+}
 
 .header{
     display: flex;
+   
+   
 }
 
 .logo_img{
@@ -18,12 +22,12 @@ h1,h2,h3,p,label{
 
 
 
-
 .container{
     display: flex;
     justify-content: center;
     border: 1px black solid;
     border-radius: 10px;
+    background-color: #FFF4EC;
 }
 
 
@@ -41,5 +45,9 @@ fieldset{
 
 .add__button, label, select{
     margin-top: 1rem;
+}
+
+.footer{
+   
 }
 
