@@ -1,0 +1,16 @@
+.journal__entry{
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+
+
+.entry__concept{
+   margin-top: -1rem;
+}
+
+.entry__mood{
+    margin-top: -.5rem;
+    margin-bottom: -.2rem;
+}
+

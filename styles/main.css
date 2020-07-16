@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@400;700&display=swap');
-
+@import "./Entry.css";
 
 h1,h2,h3,p,label{
      font-family: 'Baloo Da 2', sans-serif;
