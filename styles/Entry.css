@@ -1,12 +1,13 @@
 .journal__entry{
-    border-top: 1px solid black;
     border-bottom: 1px solid black;
+    margin-left: 1rem;
+    margin-bottom: .5rem;
 }
-
-
-
 .entry__concept{
-   margin-top: -1rem;
+    margin-top: -1rem;
+}
+.entry__para{
+    overflow-wrap: normal ;
 }
 
 .entry__mood{

@@ -36,7 +36,7 @@ html{
 
 .content__left{
     border-right: black 2px solid;
-    margin-left: -22rem;
+    margin: auto;
 }
 
 fieldset{
@@ -54,7 +54,8 @@ fieldset{
 }
 
 .content__right{
-    margin-left: .5rem;
+    margin: auto;
+    
 }
 
 .footer{
