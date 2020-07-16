@@ -1,0 +1,17 @@
+.journal__entry{
+    border-bottom: 1px solid black;
+    margin-left: 1rem;
+    margin-bottom: .5rem;
+}
+.entry__concept{
+    margin-top: -1rem;
+}
+.entry__para{
+    overflow-wrap: normal ;
+}
+
+.entry__mood{
+    margin-top: -.5rem;
+    margin-bottom: -.2rem;
+}
+
