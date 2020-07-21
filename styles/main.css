@@ -1,12 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@400;700&display=swap');
 @import "./Entry.css";
+@import "./Form.css";
 
 h1,h2,h3,p,label{
      font-family: 'Baloo Da 2', sans-serif;
 }
 
 html{
-    background-color: #846A4C;
+    background-color: #6b6d76;
 }
 
 .header{
@@ -23,9 +24,9 @@ html{
 .container{
     display: flex;
     justify-content: center;
-    border: 1px black solid;
     border-radius: 10px;
-    background-color: #FFF4EC;
+    background-color: rgb(166, 152, 136);
+    
 }
 
 
@@ -39,22 +40,11 @@ html{
     margin: auto;
 }
 
-fieldset{
-    display: flex;
-    border: none;
-    margin-bottom: 1rem;
-}
-
-.add__button{
-    background-color: #4ECDC4;
-    border-radius: 5px;
-    border: none;
-    padding: .5rem;
-    font-family: 'Baloo Da 2', sans-serif;
-}
 
 .content__right{
-    margin: auto;
+    height: 30rem;
+    overflow-y: auto;
+    margin-right: 1rem;
     
 }
 
