@@ -4,6 +4,7 @@
 
 h1,h2,h3,p,label{
      font-family: 'Baloo Da 2', sans-serif;
+     
 }
 
 html{
@@ -11,9 +12,7 @@ html{
 }
 
 .header{
-    display: flex;
-   
-   
+    display: flex;  
 }
 
 .logo_img{
@@ -26,7 +25,6 @@ html{
     justify-content: center;
     border-radius: 10px;
     background-color: rgb(166, 152, 136);
-    
 }
 
 
@@ -50,5 +48,6 @@ html{
 
 .footer{
    text-align: center;
+   margin-top: 3rem;
 }
 
