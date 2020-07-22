@@ -13,10 +13,14 @@ html{
 
 .header{
     display: flex;  
+    margin-bottom: -2rem;
+    margin-top: -3rem;
 }
 
 .logo_img{
-    height: 7rem;
+    height: 10rem;
+    width: 12rem;
+    margin-left: 1rem;
 }
 
 
@@ -49,5 +53,9 @@ html{
 .footer{
    text-align: center;
    margin-top: 3rem;
+}
+
+.github_link{
+    color: black;
 }
 
