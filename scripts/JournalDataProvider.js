@@ -29,6 +29,13 @@
         entry:"Learned about automation with javascript. Was very confusing, but I am getting the hang of it slowly.",
         mood:"Stressed"
      },
+     {
+         id: 4,
+        date:"07/14/20",
+        concept:"Javascript",
+        entry:"Learned about automation with javascript. Was very confusing, but I am getting the hang of it slowly.",
+        mood:"Stressed"
+     },
  ]
 
  export const useJournalEntries = () => {
