@@ -45,8 +45,10 @@ html{
 
 .content__right{
     height: 30rem;
+    width:30rem;
     overflow-y: auto;
     margin-right: 1rem;
+    
     
 }
 

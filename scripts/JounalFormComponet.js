@@ -1,4 +1,5 @@
 import { saveJournalEntry } from "./JournalDataProvider.js"
+import { getMoods, useMoods } from "./MoodDataProvider.js";
 
 const contentTarget = document.querySelector(".content__left")
 const eventHub = document.querySelector(".container")
@@ -18,7 +19,7 @@ if(eventClick.target.id === "add__button"){
         date: journalDate.value,
         concept:journalConcepts.value,
         entry: journalEntry.value,
-        mood:journalMood.value
+        moodId: parseInt(journalMood.value.split("--")[1])
     }
 
     saveJournalEntry(newEntry)
@@ -34,7 +35,10 @@ render()
 }
 
 const render = () =>{
-    contentTarget.innerHTML = `
+    getMoods()
+    .then(()=>{
+       const allMoods = useMoods()
+        contentTarget.innerHTML = `
     <form >
     <fieldset>
         <label for="date">Current Date</label>
@@ -44,15 +48,17 @@ const render = () =>{
         <label for="concepts">Journal Entry</label>
         <textarea name="journal_entry_text" id="journal_entry_text" cols="50" rows="10"></textarea>
         <select name="mood" id="mood_list">
-            <option value="happy">Happy</option>
-            <option value="sad">Sad</option>
-            <option value="anxious">Anxious</option>
-            <option value="scared">Scared</option>
-            <option value="Stressed">Stressed</option>
-            <option value="other">Other</option>
+           ${
+            allMoods.map((mood) =>{
+                return `<option value ="mood--${mood.id}">${mood.label}</option>`
+            })
+
+           }
         </select>
         <input id="add__button" type="submit" value="Add Journal Entry">
     </fieldset>
 </form>
 `
+    })
+    
 }
