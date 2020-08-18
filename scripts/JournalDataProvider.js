@@ -1,4 +1,5 @@
 let entryList = []
+const eventHub = document.querySelector(".container")
 
 const dispatchStateChangeEvent = () => {
     eventHub.dispatchEvent(new CustomEvent("journalStateChanged"))
@@ -27,6 +28,14 @@ return fetch("http://localhost:8088/entries")
             "Content-Type": "application/json"
         },
         body: JSON.stringify(newEntry)
+    })
+    .then(getJournalEntries)
+    .then(dispatchStateChangeEvent)
+ }
+
+ export const deleteEntry = (entryId) => {
+    return fetch(`http://localhost:8088/entries/${entryId}`,{
+        method: "DELETE"
     })
     .then(getJournalEntries)
     .then(dispatchStateChangeEvent)

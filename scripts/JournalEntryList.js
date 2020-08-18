@@ -12,10 +12,7 @@ eventHub.addEventListener("journalStateChanged", customEvent =>{
 
 
 export const EntryListComponent = () => {
-    getJournalEntries()
-    .then(()=>{
-        render()
-    })
+   render()
 }
 
 const render = () => {

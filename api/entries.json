@@ -1,6 +1,12 @@
 {
   "entries": [
-  
+    {
+      "date": "2020-08-19",
+      "concept": "asdf",
+      "entry": "asdf",
+      "moodId": 1,
+      "id": 1
+    }
   ],
   "moods": [
     {
