@@ -7,12 +7,15 @@ const entryLog = document.querySelector(".content__right")
 const eventHub = document.querySelector(".container")
 
 eventHub.addEventListener("journalStateChanged", customEvent =>{
-    render()
+    EntryListComponent()
 })
 
 
 export const EntryListComponent = () => {
-   render()
+    getJournalEntries()
+    .then(()=>{
+        render()
+    })
 }
 
 const render = () => {
@@ -21,11 +24,12 @@ const render = () => {
 const entries = useJournalEntries()
     //
 
-    entries.map((entry) =>{
-        const mood = allMoods.find((moodObj)=>{
-            return moodObj.id === entry.moodId
-        })
-        entryLog.innerHTML += JournalEntryHTML(entry,mood)
-    })
 
-    }
+entries.map((entry) =>{
+    const mood = allMoods.find((moodObj)=>{
+        return moodObj.id === entry.moodId
+    })
+entryLog.innerHTML += JournalEntryHTML(entry,mood)
+}).join("")
+}
+

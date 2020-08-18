@@ -48,10 +48,11 @@ const render = () =>{
         <label for="concepts">Journal Entry</label>
         <textarea name="journal_entry_text" id="journal_entry_text" cols="50" rows="10"></textarea>
         <select name="mood" id="mood_list">
+        <option value= "0"> Mood...</option>
            ${
             allMoods.map((mood) =>{
                 return `<option value ="mood--${mood.id}">${mood.label}</option>`
-            })
+            }).join("")
 
            }
         </select>
