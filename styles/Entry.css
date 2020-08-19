@@ -7,7 +7,7 @@
     margin-top: -1rem;
 }
 .entry__para{
-    overflow-wrap: normal ;
+    overflow-wrap: break-word ;
 }
 
 .entry__mood{
