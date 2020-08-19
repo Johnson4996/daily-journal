@@ -1,35 +1,43 @@
-import { useJournalEntries, getJournalEntries } from "./JournalDataProvider.js"
-import { JournalEntryHTML } from "./JournalEntry.js"
-import { useMoods } from "./MoodDataProvider.js"
+import {
+    useJournalEntries,
+    getJournalEntries
+} from "./JournalDataProvider.js"
+import {
+    JournalEntryHTML
+} from "./JournalEntry.js"
+import {
+    useMoods,
+    getMoods
+} from "./MoodDataProvider.js"
 
 // DOM reference to where all entries will be rendered
 const entryLog = document.querySelector(".content__right")
 const eventHub = document.querySelector(".container")
 
-eventHub.addEventListener("journalStateChanged", customEvent =>{
-    EntryListComponent()
+eventHub.addEventListener("journalStateChanged", customEvent => {
+    render()
 })
 
 
 export const EntryListComponent = () => {
     getJournalEntries()
-    .then(()=>{
-        render()
-    })
+        .then(getMoods)
+        .then(render)
 }
 
 const render = () => {
     const allMoods = useMoods()
     // Use the journal entry data from the data provider component
-const entries = useJournalEntries()
+    const entries = useJournalEntries()
     //
 
+    let htmlRep = ""
+    entries.map((entry) => {
+        const mood = allMoods.find((moodObj) => {
+            return moodObj.id === entry.moodId
+        })
 
-entries.map((entry) =>{
-    const mood = allMoods.find((moodObj)=>{
-        return moodObj.id === entry.moodId
-    })
-entryLog.innerHTML += JournalEntryHTML(entry,mood)
-}).join("")
+        htmlRep += JournalEntryHTML(entry, mood)
+    }).join("")
+    entryLog.innerHTML = htmlRep
 }
-
