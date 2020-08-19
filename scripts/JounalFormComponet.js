@@ -1,5 +1,10 @@
-import { saveJournalEntry } from "./JournalDataProvider.js"
-import { getMoods, useMoods } from "./MoodDataProvider.js";
+import {
+    saveJournalEntry
+} from "./JournalDataProvider.js"
+import {
+    getMoods,
+    useMoods
+} from "./MoodDataProvider.js";
 
 const contentTarget = document.querySelector(".content__left")
 const eventHub = document.querySelector(".container")
@@ -7,38 +12,40 @@ const eventHub = document.querySelector(".container")
 
 eventHub.addEventListener("click", eventClick => {
     //make sure user clicked on add button
-if(eventClick.target.id === "add__button"){
-    //store refrences to each input field 
-    const journalDate = document.querySelector("#date")
-    const journalConcepts = document.querySelector("#concepts")
-    const journalEntry = document.querySelector("#journal_entry_text")
-    const journalMood = document.querySelector("#mood_list")
+    if (eventClick.target.id === "add__button") {
+        //store refrences to each input field 
+        const journalDate = document.querySelector("#date")
+        const journalConcepts = document.querySelector("#concepts")
+        const journalEntry = document.querySelector("#journal_entry_text")
+        const journalMood = document.querySelector("#mood_list")
 
-    //create new journal object using input values
-    const newEntry = {
-        date: journalDate.value,
-        concept:journalConcepts.value,
-        entry: journalEntry.value,
-        moodId: parseInt(journalMood.value.split("--")[1])
+        //create new journal object using input values
+        const newEntry = {
+            date: journalDate.value,
+            concept: journalConcepts.value,
+            entry: journalEntry.value,
+            moodId: parseInt(journalMood.value.split("--")[1])
+        }
+
+        saveJournalEntry(newEntry)
     }
-
-    saveJournalEntry(newEntry)
-}
 })
 
 
 
 
 
-export const JournalForm = () =>{
-render()
+export const JournalForm = () => {
+    render()
 }
-
-const render = () =>{
+//render of journal form componet
+const render = () => {
+    //getting moods and storing in array variable
     getMoods()
-    .then(()=>{
-       const allMoods = useMoods()
-        contentTarget.innerHTML = `
+        .then(() => {
+            const allMoods = useMoods()
+    //adding form HTML to DOM
+            contentTarget.innerHTML = `
     <form >
     <fieldset>
         <label for="date">Current Date</label>
@@ -50,6 +57,7 @@ const render = () =>{
         <select name="mood" id="mood_list">
         <option value= "0"> Mood...</option>
            ${
+               //mapping through all mood labels to show on <select> element
             allMoods.map((mood) =>{
                 return `<option value ="mood--${mood.id}">${mood.label}</option>`
             }).join("")
@@ -60,6 +68,6 @@ const render = () =>{
     </fieldset>
 </form>
 `
-    })
-    
+        })
+
 }

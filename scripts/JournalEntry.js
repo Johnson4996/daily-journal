@@ -1,14 +1,11 @@
-/*
- *  Purpose: To render a single journal entry as an
- *           HTML representation of the data
- */
-
-import { deleteEntry } from "./JournalDataProvider.js"
+import {
+    deleteEntry
+} from "./JournalDataProvider.js"
 
 const eventHub = document.querySelector(".container")
 
-
-export const JournalEntryHTML = (entry,mood) => {
+//takes in the journal entry and corresponding mood obj and returns the HTML rep 
+export const JournalEntryHTML = (entry, mood) => {
     return `
         <section id="entry--${entry.id}" class="journal__entry">
         <button class="delete--${entry.id}">X</button
@@ -20,9 +17,11 @@ export const JournalEntryHTML = (entry,mood) => {
     `
 }
 
-eventHub.addEventListener("click", clickEvent =>{
-if(clickEvent.target.className.startsWith("delete--")){
-    const entryId = clickEvent.target.className.split("--")[1]
-    deleteEntry(entryId)
-}
+//listens for when the user clicks on the delete button 
+eventHub.addEventListener("click", clickEvent => {
+    if (clickEvent.target.className.startsWith("delete--")) {
+        //takes the class of the journal entry delete button and splits it to get the specific journal id
+        const entryId = clickEvent.target.className.split("--")[1]
+        deleteEntry(entryId)
+    }
 })
